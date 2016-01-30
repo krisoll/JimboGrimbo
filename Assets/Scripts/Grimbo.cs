@@ -15,6 +15,7 @@ public class Grimbo : MonoBehaviour {
     private bool drawing;
     private Animator anim;
     private GameObject drawingInstance;
+    private Drawing drawingScr;
     private bool snapped;
     private Vector2 snapNormal;
 	// Use this for initialization
@@ -22,6 +23,7 @@ public class Grimbo : MonoBehaviour {
         rigid = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         Manager.gManager.player = this;
+        Manager.gManager.asignedPlayer = this.gameObject;
         anim = GetComponent<Animator>();
 	}
 	
@@ -64,23 +66,36 @@ public class Grimbo : MonoBehaviour {
     void Flip()
     {
         flipped = !flipped;
-        transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
     void InstantiateDrawing(int i)
     {
         drawingInstance = (GameObject)Instantiate(drawingObj, spawner.position, Quaternion.identity);
         drawing = false;
         anim.SetBool("Drawing", false);
+        drawingScr = drawingInstance.GetComponent<Drawing>();
+        Manager.gManager.asignedPlayer = drawingInstance;
     }
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnCollisionStay2D(Collision2D coll)
     {
         if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
         {
-            if (Mathf.Abs(coll.contacts[0].normal.x) > 0.5f)
+            for (int i = 0; i < coll.contacts.Length; i++)
             {
-                snapped = true;
-                snapNormal = coll.contacts[0].normal;
+                if (Mathf.Abs(coll.contacts[i].normal.x) > 0.5f&&!snapped)
+                {
+                    snapped = true;
+                    snapNormal = coll.contacts[i].normal;
+                }
             }
+        }
+    }
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            snapped = false;
+            snapNormal = Vector2.zero;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 1/30/2016 9:28:52 AM-->
+<!--Last exported: 1/30/2016 10:34:52 AM-->
 <Tiled2Unity version="1.0.2.4">
   <AssignMaterial mesh="mesh_0001" material="Titles suelo" />
   <Prefab name="Test" numTilesWide="100" numTilesHigh="100" tileWidth="32" tileHeight="32" exportScale="0.01" mapWidthInPixels="3200" mapHeightInPixels="3200">
