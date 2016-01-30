@@ -195,4 +195,16 @@ public class Enemigo1 : MonoBehaviour
             blanco = col.gameObject;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            col.gameObject.GetComponent<Grimbo>().DestroyPlayer();
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
+        {
+            col.gameObject.GetComponent<Drawing>().DestroyDraw();
+        }
+    }
 }
