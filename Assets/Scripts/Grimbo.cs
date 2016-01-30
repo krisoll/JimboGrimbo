@@ -9,6 +9,7 @@ public class Grimbo : MonoBehaviour {
     private RaycastHit2D enSuelo;
     private BoxCollider2D box;
     private bool flipped;
+    private bool butterflied;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
@@ -40,7 +41,6 @@ public class Grimbo : MonoBehaviour {
                 Flip();
             }
         }
-        
 	}
     void Flip()
     {
