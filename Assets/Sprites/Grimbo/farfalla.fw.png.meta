@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: dc5a21ca7c96af84485712f42a1f560a
+timeCreated: 1454166582
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: farfalla.fw_0
+    21300002: farfalla.fw_1
+    21300004: farfalla.fw_2
+    21300006: farfalla.fw_3
+    21300008: farfalla.fw_4
+    21300010: farfalla.fw_5
+    21300012: farfalla.fw_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: farfalla.fw_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 104
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: farfalla.fw_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 67
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: farfalla.fw_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 64
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: farfalla.fw_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 35
+        width: 29
+        height: 28
+      alignment: 9
+      pivot: {x: .431790113, y: .413051188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: farfalla.fw_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 27
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: farfalla.fw_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 27
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: farfalla.fw_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: .43823573, y: .43772471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
