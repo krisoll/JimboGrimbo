@@ -22,51 +22,36 @@ public class Enemigo1 : MonoBehaviour
 
     public float rayLength;
     public int siguiendo;
+    Animator anim;
 
 
 	// Use this for initialization
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        box = GetComponent<BoxCollider2D>();
+        box = Manager.gManager.player.GetComponent<BoxCollider2D>();
         esperando = espera;
-        siguiendo = -1;
-
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
     void Update()
     {
-        if (siguiendo == -1)
-        {
-            Vector2 dir;
-            if (flipped) dir = Vector2.left;
-            else dir = Vector2.right;
-            RaycastHit2D r = Physics2D.Raycast(transform.position, dir, rayLength,  LayerMask.GetMask("Player"));
-            if (r)
-            {
-                if (r.collider.tag.CompareTo("Player")==0)
-                {
-                    siguiendo = 0;
-                    espera = 0;
-                }
-                else
-                {
-                    espera = 0;
-                    siguiendo = 1;
-                }
-            }
-            movSinSeguir();
-        }
-        else if (siguiendo == 0) seguirPlayer();
-        else if (siguiendo == 1) seguirDibujo();
+        anim.SetBool("caminando", true);
+        if (siguiendo == 0)movSinSeguir();
+        else if (siguiendo == 1) seguirPlayer();
+        else if (siguiendo == 2) seguirDibujo();
 	}
 
     void movSinSeguir()
     {
         if (ruta.Length > 1)
         {
-            if (esperando < espera) esperando += Time.deltaTime;
+            if (esperando < espera)
+            {
+                esperando += Time.deltaTime;
+                anim.SetBool("caminando", false);
+            }
             else
             {
                 transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
@@ -86,6 +71,7 @@ public class Enemigo1 : MonoBehaviour
 
     void seguirPlayer()
     {
+        Flip(Manager.gManager.player.transform.position.x < transform.position.x);
         float distancia = Vector3.Distance(transform.position, Manager.gManager.player.transform.position);
         Vector3 direccion = new Vector3(Manager.gManager.player.transform.position.x - transform.position.x,
                             Manager.gManager.player.transform.position.y - transform.position.y);
@@ -93,8 +79,8 @@ public class Enemigo1 : MonoBehaviour
         if (!r) esperando += Time.deltaTime;
         if (esperando > tiempoResignacion)
         {
-            espera = 0;
-            siguiendo = -1;
+            esperando = 0;
+            siguiendo = 0;
             punto = 0;
             return;
         }
@@ -103,9 +89,15 @@ public class Enemigo1 : MonoBehaviour
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
                               Manager.gManager.player.transform.position.x, followVelocity), transform.position.y, 0);
             if (limIz != null && transform.position.x < limIz.transform.position.x)
+            {
                 transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
+                anim.SetBool("caminando", false);
+            }
             if (limDer != null && transform.position.x > limDer.transform.position.x)
+            {
                 transform.position = new Vector3(limDer.transform.position.x, transform.position.y);
+                anim.SetBool("caminando", false);
+            }
         }
     }
 
@@ -113,7 +105,7 @@ public class Enemigo1 : MonoBehaviour
     {
         if (Manager.gManager.asignedPlayer == null)
         {
-            siguiendo = -1;
+            siguiendo = 0;
             esperando = 0;
             punto = 0;
             return;
@@ -122,13 +114,13 @@ public class Enemigo1 : MonoBehaviour
         Vector3 direccion = new Vector3(Manager.gManager.asignedPlayer.transform.position.x - transform.position.x,
                             Manager.gManager.asignedPlayer.transform.position.y - transform.position.y);
         RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Player"));
-        if (!r) espera += Time.deltaTime;
-        else if (r.collider.tag.CompareTo("Player") == 0) siguiendo = 0;
+        if (!r) esperando += Time.deltaTime;
+        else if (r.collider.tag.CompareTo("Player") == 0) siguiendo = 1;
 
-        if (espera > tiempoResignacion)
+        if (esperando > tiempoResignacion)
         {
-            espera = 0;
-            siguiendo = -1;
+            esperando = 0;
+            siguiendo = 0;
             punto = 0;
             return;
         }
@@ -141,5 +133,23 @@ public class Enemigo1 : MonoBehaviour
         if(b)transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         else transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         flipped = b;
+    }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            siguiendo = 1;
+            esperando = 0;
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "Player")
+        {
+            siguiendo = 0;
+            esperando = 0;
+        }
     }
 }
