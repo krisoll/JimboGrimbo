@@ -4,16 +4,20 @@ using System.Collections;
 public class Grimbo : MonoBehaviour {
     public float velocity;
     public float jumpVel;
+    public GameObject drawingObj;
+    public Transform spawner;
     private bool jumping;
     private Rigidbody2D rigid;
     private RaycastHit2D enSuelo;
     private BoxCollider2D box;
     private bool flipped;
     private bool butterflied;
+    private bool drawing;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+        Manager.gManager.player = this;
 	}
 	
 	// Update is called once per frame
@@ -25,6 +29,10 @@ public class Grimbo : MonoBehaviour {
             if (Input.GetButtonDown("Fire2"))
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
+            }
+            if (Input.GetButtonDown("Fire3"))
+            {
+                drawing = true;
             }
         }
         if (!flipped)
@@ -46,5 +54,9 @@ public class Grimbo : MonoBehaviour {
     {
         flipped = !flipped;
         transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+    }
+    void InstantiateDrawing(int i)
+    {
+        Instantiate(drawingObj, spawner.position, Quaternion.identity);
     }
 }
