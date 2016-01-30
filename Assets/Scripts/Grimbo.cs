@@ -35,6 +35,7 @@ public class Grimbo : MonoBehaviour {
         enSuelo = Physics2D.BoxCast(transform.position+new Vector3(box.offset.x,box.offset.y,0), new Vector2(box.size.x, box.size.x), 0, new Vector2(0, -1), (box.size.y/2)+0.01f, LayerMask.GetMask("Map"));
         if (enSuelo)
         {
+            if (!anim.GetBool("EnSuelo")) anim.SetBool("EnSuelo", true);
             if (Input.GetButtonDown("Fire2"))
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
@@ -44,6 +45,10 @@ public class Grimbo : MonoBehaviour {
                 drawing = true;
                 anim.SetBool("Drawing", true);
             }
+        }
+        else
+        {
+            if (anim.GetBool("EnSuelo")) anim.SetBool("EnSuelo", false);
         }
         if (!flipped)
         {
@@ -84,6 +89,7 @@ public class Grimbo : MonoBehaviour {
             {
                 if (Mathf.Abs(coll.contacts[i].normal.x) > 0.5f&&!snapped)
                 {
+                    rigid.velocity = new Vector2(0, rigid.velocity.y);
                     snapped = true;
                     snapNormal = coll.contacts[i].normal;
                 }
