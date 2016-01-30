@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: adb35ee9076b2a24e806e2305bf550a4
+timeCreated: 1454176426
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sub director.fw_0
+    21300002: Sub director.fw_1
+    21300004: Sub director.fw_2
+    21300006: Sub director.fw_3
+    21300008: Sub director.fw_4
+    21300010: Sub director.fw_5
+    21300012: Sub director.fw_6
+    21300014: Sub director.fw_7
+    21300016: Sub director.fw_8
+    21300018: Sub director.fw_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sub director.fw_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 148
+        width: 38
+        height: 54
+      alignment: 9
+      pivot: {x: .572324038, y: .0758774355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 154
+        width: 50
+        height: 54
+      alignment: 9
+      pivot: {x: .92751509, y: .245526344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 176
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 183
+        width: 102
+        height: 30
+      alignment: 9
+      pivot: {x: .0299725998, y: .723936439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 54
+        width: 62
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_5
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 140
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_6
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 54
+        width: 70
+        height: 124
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 84
+        width: 27
+        height: 42
+      alignment: 9
+      pivot: {x: .364280701, y: .878074646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_8
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 84
+        width: 29
+        height: 48
+      alignment: 9
+      pivot: {x: .573709428, y: .84353894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 3
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
