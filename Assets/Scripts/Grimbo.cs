@@ -19,7 +19,8 @@ public class Grimbo : MonoBehaviour {
     private bool snapped;
     private Vector2 snapNormal;
     private float prevVelY;
-    private bool activated = true;
+    public bool activated = true;
+    public bool switched = false;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
@@ -40,12 +41,16 @@ public class Grimbo : MonoBehaviour {
         if (enSuelo)
         {
             if (!anim.GetBool("EnSuelo")) anim.SetBool("EnSuelo", true);
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetAxis("Vertical")>0.01f)
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
             }
-            if (Input.GetButtonDown("Fire3")&&!drawing&&drawingInstance==null)
+            if (Input.GetButtonDown("Fire3")&&!drawing)
             {
+                if (drawingInstance != null) 
+                {
+                    Destroy(drawingInstance);
+                }
                 drawing = true;
                 anim.SetBool("Drawing", true);
             }
@@ -54,6 +59,7 @@ public class Grimbo : MonoBehaviour {
                 setActive(false);
                 drawingScr.setActive(true);
                 Manager.gManager.asignedPlayer = drawingInstance;
+                switched = true;
             }
         }
         else

@@ -40,11 +40,15 @@ public class Drawing : MonoBehaviour {
                             Flip();
                         }
                     }
-                    if (Input.GetButtonDown("Fire1"))
+                    if (Input.GetButtonDown("Fire1") && !Manager.gManager.player.switched)
                     {
                         setActive(false);
                         Manager.gManager.player.setActive(true);
                         Manager.gManager.asignedPlayer = Manager.gManager.player.gameObject;
+                    }
+                    if (Manager.gManager.player.switched)
+                    {
+                        Manager.gManager.player.switched = false;
                     }
                     break;
             }
