@@ -23,13 +23,14 @@ public class Enemigo1 : MonoBehaviour
     public float rayLength;
     public int siguiendo;
     Animator anim;
+    GameObject blanco;
 
 
 	// Use this for initialization
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        box = Manager.gManager.player.GetComponent<BoxCollider2D>();
+        box = GetComponent<BoxCollider2D>();
         esperando = espera;
         anim = GetComponent<Animator>();
 	}
@@ -37,6 +38,9 @@ public class Enemigo1 : MonoBehaviour
 	// Update is called once per frame
     void Update()
     {
+        Vector3 v = new Vector3(transform.position.x, transform.position.y + box.size.y / 2);
+        RaycastHit2D r = Physics2D.Raycast(v, Vector3.down, .5f, LayerMask.GetMask("Map"));
+        if (r) rigid.velocity = new Vector2(rigid.velocity.x, 0);
         anim.SetBool("caminando", true);
         if (siguiendo == 0)movSinSeguir();
         else if (siguiendo == 1) seguirPlayer();
@@ -71,23 +75,17 @@ public class Enemigo1 : MonoBehaviour
 
     void seguirPlayer()
     {
-        Flip(Manager.gManager.player.transform.position.x < transform.position.x);
-        float distancia = Vector3.Distance(transform.position, Manager.gManager.player.transform.position);
-        Vector3 direccion = new Vector3(Manager.gManager.player.transform.position.x - transform.position.x,
-                            Manager.gManager.player.transform.position.y - transform.position.y);
-        RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Player"));
-        if (!r) esperando += Time.deltaTime;
-        if (esperando > tiempoResignacion)
+        Flip(blanco.transform.position.x < transform.position.x);
+        float distancia = Vector3.Distance(transform.position, blanco.transform.position);
+        Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
+                            blanco.transform.position.y - transform.position.y);
+        RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Map", "Player", "Drawing"));
+        
+        if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            esperando = 0;
-            siguiendo = 0;
-            punto = 0;
-            return;
-        }
-        if (r)
-        {
+            blanco = r.collider.gameObject;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
-                              Manager.gManager.player.transform.position.x, followVelocity), transform.position.y, 0);
+                              blanco.transform.position.x, followVelocity), transform.position.y, 0);
             if (limIz != null && transform.position.x < limIz.transform.position.x)
             {
                 transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
@@ -99,33 +97,82 @@ public class Enemigo1 : MonoBehaviour
                 anim.SetBool("caminando", false);
             }
         }
+        else
+        {
+            esperando += Time.deltaTime; 
+            if (esperando > tiempoResignacion)
+            {
+                esperando = 0;
+                siguiendo = 0;
+                punto = 0;
+                blanco = null;
+                return;
+            }
+        }
     }
 
     void seguirDibujo()
     {
-        if (Manager.gManager.asignedPlayer == null)
+        if (blanco == null)
         {
             siguiendo = 0;
             esperando = 0;
             punto = 0;
             return;
         }
-        float distancia = Vector3.Distance(transform.position, Manager.gManager.asignedPlayer.transform.position);
-        Vector3 direccion = new Vector3(Manager.gManager.asignedPlayer.transform.position.x - transform.position.x,
-                            Manager.gManager.asignedPlayer.transform.position.y - transform.position.y);
-        RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Player"));
-        if (!r) esperando += Time.deltaTime;
-        else if (r.collider.tag.CompareTo("Player") == 0) siguiendo = 1;
-
-        if (esperando > tiempoResignacion)
+        if (Mathf.Abs(blanco.transform.position.x - transform.position.x)>followVelocity/4)
+                Flip(blanco.transform.position.x < transform.position.x);
+        float distancia = Vector3.Distance(transform.position, blanco.transform.position);
+        Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
+                            blanco.transform.position.y - transform.position.y);
+        RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength,LayerMask.GetMask("Map","Player","Drawing"));
+        if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            esperando = 0;
-            siguiendo = 0;
-            punto = 0;
-            return;
+            Debug.Log("Player");
+            blanco = r.collider.gameObject;
+            siguiendo = 1;
+            transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
+                              blanco.transform.position.x, followVelocity), transform.position.y, 0);
+            if (limIz != null && transform.position.x < limIz.transform.position.x)
+            {
+                transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
+                anim.SetBool("caminando", false);
+            }
+            if (limDer != null && transform.position.x > limDer.transform.position.x)
+            {
+                transform.position = new Vector3(limDer.transform.position.x, transform.position.y);
+                anim.SetBool("caminando", false);
+            }
         }
-        transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
-                                Manager.gManager.asignedPlayer.transform.position.x, followVelocity), transform.position.y, 0);
+        else if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Drawing"))
+        {
+            blanco = r.collider.gameObject;
+            transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
+                              blanco.transform.position.x, followVelocity), transform.position.y, 0);
+            if (limIz != null && transform.position.x < limIz.transform.position.x)
+            {
+                transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
+                anim.SetBool("caminando", false);
+            }
+            if (limDer != null && transform.position.x > limDer.transform.position.x)
+            {
+                transform.position = new Vector3(limDer.transform.position.x, transform.position.y);
+                anim.SetBool("caminando", false);
+            }
+        }
+        else
+        {
+            Debug.Log("Ñaña");
+            esperando += Time.deltaTime;
+            if (esperando > tiempoResignacion)
+            {
+                esperando = 0;
+                siguiendo = 0;
+                punto = 0;
+                blanco = null;
+                return;
+            }
+        }
     }
 
     void Flip(bool b)
@@ -135,21 +182,19 @@ public class Enemigo1 : MonoBehaviour
         flipped = b;
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player")
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             siguiendo = 1;
             esperando = 0;
+            blanco=col.gameObject;
         }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        if (col.tag == "Player")
+        else if (siguiendo != 1 && col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
         {
-            siguiendo = 0;
+            siguiendo = 2;
             esperando = 0;
+            blanco = col.gameObject;
         }
     }
 }
