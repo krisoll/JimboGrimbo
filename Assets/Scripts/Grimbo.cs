@@ -165,4 +165,10 @@ public class Grimbo : MonoBehaviour {
         }
         anim.SetInteger("Power", a);
     }
+    public void DestroyPlayer()
+    {
+        Manager.gManager.player.setActive(true);
+        Manager.gManager.asignedPlayer = Manager.gManager.player.gameObject;
+        Destroy(this.gameObject);
+    }
 }
