@@ -128,7 +128,6 @@ public class Enemigo1 : MonoBehaviour
         RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength,LayerMask.GetMask("Map","Player","Drawing"));
         if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("Player");
             blanco = r.collider.gameObject;
             siguiendo = 1;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
@@ -162,7 +161,6 @@ public class Enemigo1 : MonoBehaviour
         }
         else
         {
-            Debug.Log("Ñaña");
             esperando += Time.deltaTime;
             if (esperando > tiempoResignacion)
             {
