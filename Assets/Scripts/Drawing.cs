@@ -76,7 +76,7 @@ public class Drawing : MonoBehaviour {
         activated = a;
         if (!a) rigid.velocity = new Vector2(0, 0);
     }
-    void DestroyDraw()
+    public void DestroyDraw()
     {
         Manager.gManager.player.setActive(true);
         Manager.gManager.asignedPlayer = Manager.gManager.player.gameObject;
