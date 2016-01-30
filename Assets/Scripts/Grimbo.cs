@@ -14,6 +14,7 @@ public class Grimbo : MonoBehaviour {
     private bool butterflied;
     private bool drawing;
     private Animator anim;
+    private GameObject drawingInstance;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
@@ -33,7 +34,7 @@ public class Grimbo : MonoBehaviour {
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
             }
-            if (Input.GetButtonDown("Fire3"))
+            if (Input.GetButtonDown("Fire3")&&!drawing&&drawingInstance==null)
             {
                 drawing = true;
             }
@@ -60,6 +61,7 @@ public class Grimbo : MonoBehaviour {
     }
     void InstantiateDrawing(int i)
     {
-        Instantiate(drawingObj, spawner.position, Quaternion.identity);
+        drawingInstance = (GameObject)Instantiate(drawingObj, spawner.position, Quaternion.identity);
+        drawing = false;
     }
 }
