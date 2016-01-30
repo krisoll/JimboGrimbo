@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: 120a78d4ba9ddfb439b1d375d1607a89
+timeCreated: 1454130750
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: grimbo sheet.fw_0
+    21300002: grimbo sheet.fw_1
+    21300004: grimbo sheet.fw_2
+    21300006: grimbo sheet.fw_3
+    21300008: grimbo sheet.fw_4
+    21300010: grimbo sheet.fw_5
+    21300012: grimbo sheet.fw_6
+    21300014: grimbo sheet.fw_7
+    21300016: grimbo sheet.fw_8
+    21300018: grimbo sheet.fw_9
+    21300020: grimbo sheet.fw_10
+    21300022: grimbo sheet.fw_11
+    21300024: grimbo sheet.fw_12
+    21300026: grimbo sheet.fw_13
+    21300028: grimbo sheet.fw_14
+    21300030: grimbo sheet.fw_15
+    21300032: grimbo sheet.fw_16
+    21300034: grimbo sheet.fw_17
+    21300036: grimbo sheet.fw_18
+    21300038: grimbo sheet.fw_19
+    21300040: grimbo sheet.fw_20
+    21300042: grimbo sheet.fw_21
+    21300044: grimbo sheet.fw_22
+    21300046: grimbo sheet.fw_23
+    21300048: grimbo sheet.fw_24
+    21300050: grimbo sheet.fw_25
+    21300052: grimbo sheet.fw_26
+    21300054: grimbo sheet.fw_27
+    21300056: grimbo sheet.fw_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: grimbo sheet.fw_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 196
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_1
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 182
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 171
+        width: 19
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_3
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 171
+        width: 23
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_4
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 172
+        width: 22
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 172
+        width: 18
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_6
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 172
+        width: 14
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_7
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 127
+        width: 9
+        height: 28
+      alignment: 9
+      pivot: {x: .729485393, y: .887256086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_8
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 123
+        width: 11
+        height: 28
+      alignment: 9
+      pivot: {x: .147948176, y: .804272234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_9
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 137
+        width: 11
+        height: 25
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_10
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 137
+        width: 12
+        height: 26
+      alignment: 9
+      pivot: {x: .715142548, y: .887255728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_11
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 133
+        width: 15
+        height: 25
+      alignment: 9
+      pivot: {x: .861439526, y: .871765733}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_12
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 133
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: .872913778, y: .822713196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 123
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_14
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 148
+        width: 13
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_15
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 148
+        width: 13
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_16
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 148
+        width: 16
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_17
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 148
+        width: 13
+        height: 17
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_18
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 35
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_19
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 35
+        width: 48
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_20
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 33
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 174
+        width: 9
+        height: 28
+      alignment: 9
+      pivot: {x: .301025808, y: .813384473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_22
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 174
+        width: 9
+        height: 27
+      alignment: 9
+      pivot: {x: .718872309, y: .878051221}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 165
+        width: 19
+        height: 18
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 108
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_25
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 108
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 107
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_27
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 107
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_28
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 108
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
