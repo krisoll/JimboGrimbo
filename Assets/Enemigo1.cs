@@ -43,13 +43,18 @@ public class Enemigo1 : MonoBehaviour
 	// Update is called once per frame
     void Update()
     {
-        Vector3 v = new Vector3(transform.position.x, transform.position.y + box.size.y / 2);
-        RaycastHit2D r = Physics2D.Raycast(v, Vector3.down, .5f, LayerMask.GetMask("Map"));
-        if (r) rigid.velocity = new Vector2(rigid.velocity.x, 0);
+        
         anim.SetBool("caminando", true);
         if (siguiendo == 0)movSinSeguir();
         else if (siguiendo == 1) seguirPlayer();
         else if (siguiendo == 2) seguirDibujo();
+        if (snapNormal.x < -0.5f && rigid.velocity.x < 0 ||
+                snapNormal.x > 0.5f && rigid.velocity.x > 0)
+            snapped = false;
+        if(snapped) rigid.velocity = new Vector2(0, rigid.velocity.y);
+        Vector3 v = new Vector3(transform.position.x, transform.position.y + box.size.y / 2);
+        RaycastHit2D r = Physics2D.Raycast(v, Vector3.down, .5f, LayerMask.GetMask("Map"));
+        if (r) rigid.velocity = new Vector2(rigid.velocity.x, 0);
 	}
 
     void movSinSeguir()
