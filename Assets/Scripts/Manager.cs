@@ -4,6 +4,7 @@ using System.Collections;
 public class Manager : MonoBehaviour {
     public static Manager gManager;
     public Grimbo player;
+    public GameObject asignedPlayer;
 
 	// Use this for initialization
 	void Awake () {
