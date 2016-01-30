@@ -8,6 +8,7 @@ public class Grimbo : MonoBehaviour {
     private Rigidbody2D rigid;
     private RaycastHit2D enSuelo;
     private BoxCollider2D box;
+    private bool flipped;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
@@ -25,6 +26,25 @@ public class Grimbo : MonoBehaviour {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
             }
         }
-
+        if (!flipped)
+        {
+            if (Input.GetAxis("Horizontal") < -0.01f)
+            {
+                Flip();
+            }
+        }
+        else
+        {
+            if (Input.GetAxis("Horizontal") > 0.01f)
+            {
+                Flip();
+            }
+        }
+        
 	}
+    void Flip()
+    {
+        flipped = !flipped;
+        transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
+    }
 }
