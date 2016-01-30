@@ -14,6 +14,11 @@ public class Enemigo1 : MonoBehaviour
     public float followVelocity;
     public float jumpVel;
     private bool jumping;
+
+
+    private bool snapped;
+    private Vector2 snapNormal;
+    private float prevVelY;
     private Rigidbody2D rigid;
     private RaycastHit2D enSuelo;
     private BoxCollider2D box;
@@ -205,6 +210,30 @@ public class Enemigo1 : MonoBehaviour
         else if (col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
         {
             col.gameObject.GetComponent<Drawing>().DestroyDraw();
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            for (int i = 0; i < coll.contacts.Length; i++)
+            {
+                if (Mathf.Abs(coll.contacts[i].normal.x) > 0.5f && !snapped)
+                {
+                    rigid.velocity = new Vector2(0, prevVelY);
+                    snapped = true;
+                    snapNormal = coll.contacts[i].normal;
+                }
+            }
+        }
+    }
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            snapped = false;
+            snapNormal = Vector2.zero;
         }
     }
 }
