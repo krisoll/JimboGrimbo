@@ -15,6 +15,8 @@ public class Grimbo : MonoBehaviour {
     private bool drawing;
     private Animator anim;
     private GameObject drawingInstance;
+    private bool snapped;
+    private Vector2 snapNormal;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
@@ -25,8 +27,9 @@ public class Grimbo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")*velocity));
-        rigid.velocity = new Vector2(Input.GetAxis("Horizontal")*velocity,rigid.velocity.y);
+        if(!drawing&&!snapped)rigid.velocity = new Vector2(Input.GetAxis("Horizontal")*velocity,rigid.velocity.y);
+        else if (snapped) rigid.velocity = new Vector2(0, rigid.velocity.y);
+        anim.SetFloat("Velocity", Mathf.Abs(rigid.velocity.x));
         enSuelo = Physics2D.BoxCast(transform.position+new Vector3(box.offset.x,box.offset.y,0), new Vector2(box.size.x, box.size.x), 0, new Vector2(0, -1), (box.size.y/2)+0.01f, LayerMask.GetMask("Map"));
         if (enSuelo)
         {
@@ -37,6 +40,7 @@ public class Grimbo : MonoBehaviour {
             if (Input.GetButtonDown("Fire3")&&!drawing&&drawingInstance==null)
             {
                 drawing = true;
+                anim.SetBool("Drawing", true);
             }
         }
         if (!flipped)
@@ -53,6 +57,9 @@ public class Grimbo : MonoBehaviour {
                 Flip();
             }
         }
+        if (snapNormal.x < -0.5f && Input.GetAxis("Horizontal") < -0.01f ||
+            snapNormal.x > 0.5f && Input.GetAxis("Horizontal") > 0.01f)
+            snapped = false;
 	}
     void Flip()
     {
@@ -63,5 +70,17 @@ public class Grimbo : MonoBehaviour {
     {
         drawingInstance = (GameObject)Instantiate(drawingObj, spawner.position, Quaternion.identity);
         drawing = false;
+        anim.SetBool("Drawing", false);
+    }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            if (Mathf.Abs(coll.contacts[0].normal.x) > 0.5f)
+            {
+                snapped = true;
+                snapNormal = coll.contacts[0].normal;
+            }
+        }
     }
 }
