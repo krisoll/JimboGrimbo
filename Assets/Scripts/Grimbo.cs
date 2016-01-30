@@ -13,17 +13,20 @@ public class Grimbo : MonoBehaviour {
     private bool flipped;
     private bool butterflied;
     private bool drawing;
+    private Animator anim;
 	// Use this for initialization
 	void Start () {
         rigid = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         Manager.gManager.player = this;
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")*velocity));
         rigid.velocity = new Vector2(Input.GetAxis("Horizontal")*velocity,rigid.velocity.y);
-        enSuelo = Physics2D.BoxCast(transform.position, new Vector2(box.size.x, box.size.x), 0, new Vector2(0, -1), (box.size.y/2)+0.01f, LayerMask.GetMask("Map"));
+        enSuelo = Physics2D.BoxCast(transform.position+new Vector3(box.offset.x,box.offset.y,0), new Vector2(box.size.x, box.size.x), 0, new Vector2(0, -1), (box.size.y/2)+0.01f, LayerMask.GetMask("Map"));
         if (enSuelo)
         {
             if (Input.GetButtonDown("Fire2"))
