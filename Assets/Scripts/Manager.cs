@@ -6,7 +6,7 @@ public class Manager : MonoBehaviour {
     public Grimbo player;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         gManager = new Manager();
 	}
 	
