@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: adb35ee9076b2a24e806e2305bf550a4
-timeCreated: 1454176426
+timeCreated: 1454185212
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,7 @@ TextureImporter:
     21300014: Sub director.fw_7
     21300016: Sub director.fw_8
     21300018: Sub director.fw_9
+    21300020: Sub director.fw_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -87,7 +88,7 @@ TextureImporter:
         width: 27
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sub director.fw_3
       rect:
@@ -158,6 +159,16 @@ TextureImporter:
         height: 60
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sub director.fw_10
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 5
+        width: 49
+        height: 42
+      alignment: 9
+      pivot: {x: .936240077, y: .310962826}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
