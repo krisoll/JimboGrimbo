@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 120a78d4ba9ddfb439b1d375d1607a89
-timeCreated: 1454161474
+timeCreated: 1454169123
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -46,6 +46,11 @@ TextureImporter:
     21300078: grimbo sheet.fw_39
     21300080: grimbo sheet.fw_40
     21300082: grimbo sheet.fw_41
+    21300084: grimbo sheet.fw_42
+    21300086: grimbo sheet.fw_43
+    21300088: grimbo sheet.fw_44
+    21300090: grimbo sheet.fw_45
+    21300092: grimbo sheet.fw_46
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -96,7 +101,7 @@ TextureImporter:
         serializedVersion: 2
         x: 111
         y: 196
-        width: 46
+        width: 47
         height: 65
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -510,6 +515,56 @@ TextureImporter:
         height: 20
       alignment: 9
       pivot: {x: .95471555, y: .220875546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_42
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 201
+        width: 47
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_43
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 70
+        width: 35
+        height: 45
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_44
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 10
+        width: 35
+        height: 45
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_45
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 133
+        width: 32
+        height: 17
+      alignment: 9
+      pivot: {x: .0390281677, y: .186658978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grimbo sheet.fw_46
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 157
+        width: 32
+        height: 18
+      alignment: 9
+      pivot: {x: .952278614, y: .238945007}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
