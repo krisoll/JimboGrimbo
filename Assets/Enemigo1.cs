@@ -14,6 +14,11 @@ public class Enemigo1 : MonoBehaviour
     public float followVelocity;
     public float jumpVel;
     private bool jumping;
+
+
+    private bool snapped;
+    private Vector2 snapNormal;
+    private float prevVelY;
     private Rigidbody2D rigid;
     private RaycastHit2D enSuelo;
     private BoxCollider2D box;
@@ -38,13 +43,18 @@ public class Enemigo1 : MonoBehaviour
 	// Update is called once per frame
     void Update()
     {
-        Vector3 v = new Vector3(transform.position.x, transform.position.y + box.size.y / 2);
-        RaycastHit2D r = Physics2D.Raycast(v, Vector3.down, .5f, LayerMask.GetMask("Map"));
-        if (r) rigid.velocity = new Vector2(rigid.velocity.x, 0);
+        
         anim.SetBool("caminando", true);
         if (siguiendo == 0)movSinSeguir();
         else if (siguiendo == 1) seguirPlayer();
         else if (siguiendo == 2) seguirDibujo();
+        if (snapNormal.x < -0.5f && rigid.velocity.x < 0 ||
+                snapNormal.x > 0.5f && rigid.velocity.x > 0)
+            snapped = false;
+        if(snapped) rigid.velocity = new Vector2(0, rigid.velocity.y);
+        Vector3 v = new Vector3(transform.position.x, transform.position.y + box.size.y / 2);
+        RaycastHit2D r = Physics2D.Raycast(v, Vector3.down, .5f, LayerMask.GetMask("Map"));
+        if (r) rigid.velocity = new Vector2(rigid.velocity.x, 0);
 	}
 
     void movSinSeguir()
@@ -128,7 +138,6 @@ public class Enemigo1 : MonoBehaviour
         RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength,LayerMask.GetMask("Map","Player","Drawing"));
         if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("Player");
             blanco = r.collider.gameObject;
             siguiendo = 1;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
@@ -162,7 +171,6 @@ public class Enemigo1 : MonoBehaviour
         }
         else
         {
-            Debug.Log("Ñaña");
             esperando += Time.deltaTime;
             if (esperando > tiempoResignacion)
             {
@@ -195,6 +203,42 @@ public class Enemigo1 : MonoBehaviour
             siguiendo = 2;
             esperando = 0;
             blanco = col.gameObject;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            col.gameObject.GetComponent<Grimbo>().DestroyPlayer();
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
+        {
+            col.gameObject.GetComponent<Drawing>().DestroyDraw();
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            for (int i = 0; i < coll.contacts.Length; i++)
+            {
+                if (Mathf.Abs(coll.contacts[i].normal.x) > 0.5f && !snapped)
+                {
+                    rigid.velocity = new Vector2(0, prevVelY);
+                    snapped = true;
+                    snapNormal = coll.contacts[i].normal;
+                }
+            }
+        }
+    }
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Map"))
+        {
+            snapped = false;
+            snapNormal = Vector2.zero;
         }
     }
 }
