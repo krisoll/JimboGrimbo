@@ -25,7 +25,9 @@ public class Manager : MonoBehaviour {
             cont += Time.deltaTime;
             if (cont >= countdowTime)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                Application.LoadLevel(Application.loadedLevelName);
+                cont = 0;
+                startCountdown = false;
             }
         }
 	}
