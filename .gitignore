@@ -28,3 +28,5 @@ JimboGrimbo/Temp/UnityLockfile
 Temp/UnityLockfile
 Assets/Tilesets/background/tutorial2.png.meta
 *.meta
+Assets/Tiled2Unity/Meshes/Test.obj
+Assets/Tiled2Unity/Prefabs/Test.prefab
