@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 99e6c3d3e630bb64dbedb7ddb0aaf8b8
-timeCreated: 1454183213
+guid: 58bca37f93b199e468812af77354a3f2
+timeCreated: 1454223077
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: props4_0
-    21300002: props4_1
-    21300004: props4_2
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -40,7 +37,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,37 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: props4_0
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 0
-        width: 21
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: props4_1
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 0
-        width: 26
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: props4_2
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 0
-        width: 41
-        height: 76
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
