@@ -132,7 +132,6 @@ public class Enemigo1 : MonoBehaviour
         }
         if (Mathf.Abs(blanco.transform.position.x - transform.position.x)>followVelocity/4)
                 Flip(blanco.transform.position.x < transform.position.x);
-        float distancia = Vector3.Distance(transform.position, blanco.transform.position);
         Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
                             blanco.transform.position.y - transform.position.y);
         RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength,LayerMask.GetMask("Map","Player","Drawing"));
@@ -194,15 +193,28 @@ public class Enemigo1 : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            siguiendo = 1;
-            esperando = 0;
-            blanco=col.gameObject;
+
+            Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
+                                blanco.transform.position.y - transform.position.y);
+            RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Map", "Player", "Drawing"));
+            if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                siguiendo = 1;
+                esperando = 0;
+                blanco = col.gameObject;
+            }
         }
         else if (siguiendo != 1 && col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
         {
-            siguiendo = 2;
-            esperando = 0;
-            blanco = col.gameObject;
+            Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
+                                blanco.transform.position.y - transform.position.y);
+            RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Map", "Player", "Drawing"));
+            if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                siguiendo = 2;
+                esperando = 0;
+                blanco = col.gameObject;
+            }
         }
     }
 
