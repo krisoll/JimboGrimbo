@@ -37,6 +37,7 @@ public class Enemigo1 : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         esperando = espera;
+        //Prueba
         anim = GetComponent<Animator>();
 	}
 	
