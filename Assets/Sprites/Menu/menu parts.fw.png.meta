@@ -1,9 +1,21 @@
 fileFormatVersion: 2
 guid: 2b50f73a4f711aa468bb218c99585a40
-timeCreated: 1454220565
+timeCreated: 1454222594
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: menu parts.fw_0
+    21300002: menu parts.fw_1
+    21300004: menu parts.fw_2
+    21300006: menu parts.fw_3
+    21300008: menu parts.fw_4
+    21300010: menu parts.fw_5
+    21300012: menu parts.fw_6
+    21300014: menu parts.fw_7
+    21300016: menu parts.fw_8
+    21300018: menu parts.fw_9
+    21300020: menu parts.fw_10
+    21300022: menu parts.fw_11
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,18 +38,18 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +60,127 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: menu parts.fw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 142
+        height: 254
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 370
+        width: 151
+        height: 72
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 259
+        width: 67
+        height: 43
+      alignment: 9
+      pivot: {x: .016449431, y: .227228209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_3
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 94
+        width: 77
+        height: 254
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 168
+        width: 47
+        height: 75
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_5
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 130
+        width: 77
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 47
+        height: 72
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 2
+        width: 47
+        height: 72
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_8
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 2
+        width: 47
+        height: 71
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 47
+        height: 72
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_10
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 47
+        height: 72
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu parts.fw_11
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 0
+        width: 47
+        height: 71
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
