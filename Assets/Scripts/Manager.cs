@@ -10,9 +10,12 @@ public class Manager : MonoBehaviour {
     private float countdowTime;
 	// Use this for initialization
 	void Awake () {
-        gManager = new Manager();
+        startCountdown = false;
         countdowTime = 4;
-        DontDestroyOnLoad(this.gameObject);
+        cont = 0;
+        if (gManager == null)gManager = this;
+        else if (gManager != this) Destroy(gameObject);    
+        DontDestroyOnLoad(gameObject);
 	}
 	
 	// Update is called once per frame

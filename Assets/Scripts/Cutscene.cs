@@ -7,9 +7,8 @@ public class Cutscene : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    private void LoadLevel(int level)
+    {
+        Application.LoadLevel(level);
+    }
 }
