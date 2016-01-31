@@ -12,8 +12,6 @@ public class Enemigo1 : MonoBehaviour
     float esperando;
     public float velocity;
     public float followVelocity;
-    public float jumpVel;
-    private bool jumping;
 
 
     private bool snapped;
