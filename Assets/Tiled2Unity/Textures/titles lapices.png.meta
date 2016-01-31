@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: ea22a0225b24e73428e681426c594b6b
-timeCreated: 1454225913
+guid: d2526101537e094438adfba62af4b94c
+timeCreated: 1454225884
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: splash.fw_0
-    21300002: splash.fw_1
-    21300004: splash.fw_2
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -33,14 +30,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,41 +45,11 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
-  textureType: 8
+  textureType: 5
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: splash.fw_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 15
-        width: 59
-        height: 61
-      alignment: 9
-      pivot: {x: .616607487, y: .308266699}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: splash.fw_1
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 13
-        width: 65
-        height: 68
-      alignment: 9
-      pivot: {x: .579382658, y: .338121355}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: splash.fw_2
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 9
-        width: 79
-        height: 81
-      alignment: 9
-      pivot: {x: .504354358, y: .374718934}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
-  userData: 
+  userData: tiled2unity
   assetBundleName: 
   assetBundleVariant: 
