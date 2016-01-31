@@ -67,7 +67,7 @@ public class Grimbo : MonoBehaviour {
         {
             if (!drawing && !snapped && !action) rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * velocity, rigid.velocity.y);
             else if (snapped && !action) rigid.velocity = new Vector2(0, rigid.velocity.y);
-            else if (action&&rigid.velocity.y<=-1.2f) rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * velocity, -1.2f);
+            else if (action&&rigid.velocity.y<=-1f) rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * velocity, -1f);
             if (Input.GetButtonDown("Fire3")&&!enSuelo)
             {
                 action = true;
