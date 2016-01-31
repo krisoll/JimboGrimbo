@@ -11,6 +11,10 @@ public class Cutscene : MonoBehaviour {
     {
         Application.LoadLevel(nivel);
     }
+    void DestroyManager()
+    {
+        Destroy(Manager.gManager.gameObject);
+    }
     void playSound(AudioClip clip)
     {
         source.clip = clip;
