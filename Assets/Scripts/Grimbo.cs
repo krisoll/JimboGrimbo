@@ -6,6 +6,8 @@ public class Grimbo : MonoBehaviour {
     public float jumpVel;
     public GameObject drawingObj;
     public Transform spawner;
+    public AudioSource footsteps;
+    public AudioClip[] footstepsClips;
     private bool jumping;
     private Rigidbody2D rigid;
     private RaycastHit2D enSuelo;
@@ -66,7 +68,7 @@ public class Grimbo : MonoBehaviour {
             if (!drawing && !snapped && !action) rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * velocity, rigid.velocity.y);
             else if (snapped && !action) rigid.velocity = new Vector2(0, rigid.velocity.y);
             else if (action&&rigid.velocity.y<=-1.2f) rigid.velocity = new Vector2(Input.GetAxis("Horizontal") * velocity, -1.2f);
-            if (Input.GetButtonDown("Fire3"))
+            if (Input.GetButtonDown("Fire3")&&!enSuelo)
             {
                 action = true;
                 anim.SetBool("Action", action);
@@ -84,6 +86,13 @@ public class Grimbo : MonoBehaviour {
             if (Input.GetAxis("Vertical")>0.01f&&!drawing)
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
+            }
+
+            if ((footsteps.time>=(footsteps.clip.length*0.5f)||!footsteps.isPlaying)&& Mathf.Abs(rigid.velocity.x)>0)
+            {
+                int r = Random.Range(0, footstepsClips.Length);
+                footsteps.clip = footstepsClips[r];
+                footsteps.Play();
             }
         }
         else
