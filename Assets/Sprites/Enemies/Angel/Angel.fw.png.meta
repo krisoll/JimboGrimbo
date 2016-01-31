@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: e62b824af5224e04c871a5efa1f6d9f4
-timeCreated: 1454197944
+timeCreated: 1454198890
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Angel.fw_0
+    21300002: Angel.fw_1
+    21300004: Angel.fw_2
+    21300006: Angel.fw_3
+    21300008: Angel.fw_4
+    21300010: Angel.fw_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,18 +32,18 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +54,67 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Angel.fw_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 66
+        height: 70
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Angel.fw_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 45
+        width: 45
+        height: 64
+      alignment: 9
+      pivot: {x: .395996273, y: .372602701}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Angel.fw_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 39
+        width: 66
+        height: 70
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Angel.fw_3
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 4
+        width: 31
+        height: 21
+      alignment: 9
+      pivot: {x: .996054471, y: .827784836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Angel.fw_4
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 20
+        height: 25
+      alignment: 9
+      pivot: {x: .845440686, y: .882546067}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Angel.fw_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 17
+        height: 24
+      alignment: 9
+      pivot: {x: .749084473, y: .900746763}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
