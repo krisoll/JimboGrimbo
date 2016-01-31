@@ -83,7 +83,7 @@ public class Grimbo : MonoBehaviour {
         if (enSuelo)
         {
             if (!anim.GetBool("EnSuelo")) anim.SetBool("EnSuelo", true);
-            if (Input.GetAxis("Vertical")>0.01f&&!drawing)
+            if (Input.GetButtonDown("Fire2")&&!drawing)
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpVel);
             }
