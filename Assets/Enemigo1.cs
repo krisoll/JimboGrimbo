@@ -226,6 +226,9 @@ public class Enemigo1 : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             col.gameObject.GetComponent<Grimbo>().DestroyPlayer();
+            anim.SetBool("agarrar", true);
+            siguiendo = 0;
+            esperando = -60;
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
         {
