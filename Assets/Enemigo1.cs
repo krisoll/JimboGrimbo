@@ -135,7 +135,8 @@ public class Enemigo1 : MonoBehaviour
         Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
                             blanco.transform.position.y - transform.position.y);
         RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength,LayerMask.GetMask("Map","Player","Drawing"));
-        if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player") &&
+                        r.collider.tag.CompareTo("Hide") != 0)
         {
             blanco = r.collider.gameObject;
             siguiendo = 1;
@@ -194,10 +195,11 @@ public class Enemigo1 : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
 
-            Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
-                                blanco.transform.position.y - transform.position.y);
+            Vector3 direccion = new Vector3(col.transform.position.x - transform.position.x,
+                                col.transform.position.y - transform.position.y);
             RaycastHit2D r = Physics2D.Raycast(transform.position, direccion, rayLength, LayerMask.GetMask("Map", "Player", "Drawing"));
-            if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+            if (r && r.collider.gameObject.layer == LayerMask.NameToLayer("Player") &&
+                        r.collider.tag.CompareTo("Hide")!=0)
             {
                 siguiendo = 1;
                 esperando = 0;
