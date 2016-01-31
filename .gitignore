@@ -22,9 +22,3 @@ ExportedObj/
 # Unity3D generated meta files
 *.pidb.meta
 
-# Unity3D Generated File On Crash Reports
-sysinfo.txt
-JimboGrimbo/Temp/UnityLockfile
-Temp/UnityLockfile
-Assets/Tilesets/background/tutorial2.png.meta
-*.meta
