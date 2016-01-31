@@ -37,7 +37,6 @@ public class Enemigo1 : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         esperando = espera;
-        //Prueba
         anim = GetComponent<Animator>();
 	}
 	
@@ -226,7 +225,6 @@ public class Enemigo1 : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            blanco = null;
             col.gameObject.GetComponent<Grimbo>().DestroyPlayer();
             anim.SetBool("agarrar", true);
             siguiendo = 0;
@@ -234,10 +232,7 @@ public class Enemigo1 : MonoBehaviour
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
         {
-            blanco = null;
             col.gameObject.GetComponent<Drawing>().DestroyDraw();
-            siguiendo = 0;
-            esperando = 0;
         }
     }
 

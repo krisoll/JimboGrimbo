@@ -11,6 +11,6 @@ public class CameraG : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if(Manager.gManager.asignedPlayer!=null)transform.position = Vector3.Slerp(transform.position, new Vector3(Manager.gManager.asignedPlayer.transform.position.x, Manager.gManager.asignedPlayer.transform.position.y+offsetY, transform.position.z), velocity * Time.deltaTime * (damping / 10));
+        transform.position = Vector3.Slerp(transform.position, new Vector3(Manager.gManager.asignedPlayer.transform.position.x, Manager.gManager.asignedPlayer.transform.position.y+offsetY, transform.position.z), velocity * Time.deltaTime * (damping / 10));
 	}
 }

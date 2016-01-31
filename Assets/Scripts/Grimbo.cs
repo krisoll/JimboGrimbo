@@ -177,8 +177,7 @@ public class Grimbo : MonoBehaviour {
     public void DestroyPlayer()
     {
         Manager.gManager.player.setActive(true);
-        Manager.gManager.asignedPlayer = new GameObject();
-        Manager.gManager.asignedPlayer.transform.position = this.transform.position;
+        Manager.gManager.asignedPlayer = Manager.gManager.player.gameObject;
         Manager.gManager.startCountdown = true;
         Destroy(this.gameObject);
     }
