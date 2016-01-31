@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 31-01-2016 4:35:05-->
+<!--Last exported: 31-01-2016 13:03:50-->
 <Tiled2Unity version="1.0.2.4">
   <AssignMaterial mesh="mesh_0001" material="Titles suelo" alphaColorKey="#ff00ff" />
   <AssignMaterial mesh="mesh_0002" material="titles lapices" alphaColorKey="#ff00ff" />
