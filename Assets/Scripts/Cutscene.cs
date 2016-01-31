@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
-	public GameObject[] puntos;
+public class Cutscene : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,7 +10,6 @@ public class NewBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+	
 	}
-
 }
