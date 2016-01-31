@@ -3,6 +3,9 @@ using System.Collections;
 [System.Serializable]
 public class Menu : MonoBehaviour {
     public GameObject pressStart;
+    public AudioSource source;
+    public AudioSource music;
+    public AudioClip scratch;
     private Animator anim;
 	// Use this for initialization
 	void Start () {
@@ -16,10 +19,19 @@ public class Menu : MonoBehaviour {
         {
             Destroy(pressStart.gameObject);
             anim.SetBool("Run", true);
+            music.Stop();
+            music.clip = scratch;
+            music.loop = false;
+            music.Play();
         }
 	}
     private void changeLevel()
     {
         Application.LoadLevel("Intro cutscene");
+    }
+    private void playSound(AudioClip clip)
+    {
+        source.clip = clip;
+        source.Play();
     }
 }
