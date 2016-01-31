@@ -7,8 +7,8 @@ public class Cutscene : MonoBehaviour {
 	void Start () {
 	
 	}
-    private void LoadLevel(int level)
+    private void LoadLevel(string nivel)
     {
-        Application.LoadLevel(level);
+        Application.LoadLevel(nivel);
     }
 }
