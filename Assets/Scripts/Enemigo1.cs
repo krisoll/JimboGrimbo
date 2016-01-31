@@ -37,6 +37,7 @@ public class Enemigo1 : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         esperando = espera;
+        //Prueba
         anim = GetComponent<Animator>();
 	}
 	
@@ -69,8 +70,8 @@ public class Enemigo1 : MonoBehaviour
             else
             {
                 transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
-                                ruta[punto].transform.position.x, velocity), transform.position.y, 0);
-                if (Mathf.Abs(transform.position.x - ruta[punto].transform.position.x) < velocity)
+                                ruta[punto].transform.position.x, velocity*Time.deltaTime), transform.position.y, 0);
+                if (Mathf.Abs(transform.position.x - ruta[punto].transform.position.x) < velocity * Time.deltaTime)
                 {
                     punto = (punto + 1) % ruta.Length;
                     esperando = 0;
@@ -96,7 +97,7 @@ public class Enemigo1 : MonoBehaviour
         {
             blanco = r.collider.gameObject;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
-                              blanco.transform.position.x, followVelocity), transform.position.y, 0);
+                              blanco.transform.position.x, followVelocity * Time.deltaTime), transform.position.y, 0);
             if (limIz != null && transform.position.x < limIz.transform.position.x)
             {
                 transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
@@ -110,7 +111,8 @@ public class Enemigo1 : MonoBehaviour
         }
         else
         {
-            esperando += Time.deltaTime; 
+            esperando += Time.deltaTime;
+            anim.SetBool("caminando", false);
             if (esperando > tiempoResignacion)
             {
                 esperando = 0;
@@ -131,7 +133,7 @@ public class Enemigo1 : MonoBehaviour
             punto = 0;
             return;
         }
-        if (Mathf.Abs(blanco.transform.position.x - transform.position.x)>followVelocity/4)
+        if (Mathf.Abs(blanco.transform.position.x - transform.position.x) > followVelocity * Time.deltaTime/4)
                 Flip(blanco.transform.position.x < transform.position.x);
         Vector3 direccion = new Vector3(blanco.transform.position.x - transform.position.x,
                             blanco.transform.position.y - transform.position.y);
@@ -142,7 +144,7 @@ public class Enemigo1 : MonoBehaviour
             blanco = r.collider.gameObject;
             siguiendo = 1;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
-                              blanco.transform.position.x, followVelocity), transform.position.y, 0);
+                              blanco.transform.position.x, followVelocity * Time.deltaTime), transform.position.y, 0);
             if (limIz != null && transform.position.x < limIz.transform.position.x)
             {
                 transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
@@ -158,7 +160,7 @@ public class Enemigo1 : MonoBehaviour
         {
             blanco = r.collider.gameObject;
             transform.position = new Vector3(Mathf.MoveTowards(transform.position.x,
-                              blanco.transform.position.x, followVelocity), transform.position.y, 0);
+                              blanco.transform.position.x, followVelocity * Time.deltaTime), transform.position.y, 0);
             if (limIz != null && transform.position.x < limIz.transform.position.x)
             {
                 transform.position = new Vector3(limIz.transform.position.x, transform.position.y);
@@ -173,6 +175,7 @@ public class Enemigo1 : MonoBehaviour
         else
         {
             esperando += Time.deltaTime;
+            anim.SetBool("caminando", false);
             if (esperando > tiempoResignacion)
             {
                 esperando = 0;
@@ -225,6 +228,7 @@ public class Enemigo1 : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            blanco = null;
             col.gameObject.GetComponent<Grimbo>().DestroyPlayer();
             anim.SetBool("agarrar", true);
             siguiendo = 0;
@@ -232,7 +236,10 @@ public class Enemigo1 : MonoBehaviour
         }
         else if (col.gameObject.layer == LayerMask.NameToLayer("Drawing"))
         {
+            blanco = null;
             col.gameObject.GetComponent<Drawing>().DestroyDraw();
+            siguiendo = 0;
+            esperando = 0;
         }
     }
 
